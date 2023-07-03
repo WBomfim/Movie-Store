@@ -73,7 +73,7 @@ public with sharing class ReservationBO {
     for (Reservation__c reservation : reservations) {
       inventoryItemIds.add(reservation.InventoryItem__c);
 
-      if (reservation.ReservationStatus__c == 'Awaiting Rent' && reservation.LastModifiedDate.addDays(1) < DateTime.now()) {
+      if (reservation.ReservationStatus__c == 'Awaiting Rent' && reservation.StartAwaitingRent__c.addDays(1) < DateTime.now()) {
         reservation.ReservationStatus__c = 'Canceled';
       }
     }

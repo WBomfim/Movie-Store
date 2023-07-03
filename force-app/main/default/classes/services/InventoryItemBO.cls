@@ -37,6 +37,7 @@ public with sharing class InventoryItemBO {
 
       reservationToUpdate.InventoryItem__c = inventoryItem.Id;
       reservationToUpdate.ReservationStatus__c = 'Awaiting Rent';
+      reservationToUpdate.StartAwaitingRent__c = System.now();
 
       Contact contact = contactDAO.findByIds(new Set<Id>{reservationToUpdate.Contact__c})[0];
       Inventory__c inventory = inventoryDAO.findByIds(new Set<Id>{reservationToUpdate.Inventory__c})[0];
