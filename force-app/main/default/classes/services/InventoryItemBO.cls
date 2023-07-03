@@ -43,7 +43,6 @@ public with sharing class InventoryItemBO {
 
       EmailMessaging emailMessaging = new EmailMessaging();
 
-      System.debug('contact.Name: ' + contact.Name);
       emailMessaging.receivedItem(contact.Name, contact.Email, inventory.Name, reservationToUpdate.Name);
 
       inventoryItem.Status__c = 'Reserved';

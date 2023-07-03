@@ -67,4 +67,14 @@ public with sharing class SeedersToTests {
     insert rent;
     return rent.Id;
   }
+
+  public static Id createReservation(Id contactId, Id inventoryId) {
+    Reservation__c reservation = new Reservation__c(
+      Contact__c = contactId,
+      Inventory__c = inventoryId
+    );
+
+    insert reservation;
+    return reservation.Id;
+  }
 }
