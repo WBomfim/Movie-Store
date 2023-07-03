@@ -6,6 +6,7 @@ public with sharing class WishListBO {
       Name,
       ContactName__c
       FROM WishList__c
+      ORDER BY CreatedDate
     ];
   }
 
