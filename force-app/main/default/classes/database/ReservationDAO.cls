@@ -8,7 +8,8 @@ public with sharing class ReservationDAO {
         Inventory__c,
         InventoryItem__c,
         ReservationStatus__c,
-        CreatedDate
+        CreatedDate,
+        LastModifiedDate
       FROM Reservation__c
       WHERE Inventory__c = :inventoryId
       AND ReservationStatus__c = 'Awaiting Item'
@@ -25,7 +26,8 @@ public with sharing class ReservationDAO {
         Inventory__c,
         InventoryItem__c,
         ReservationStatus__c,
-        CreatedDate
+        CreatedDate,
+        LastModifiedDate
       FROM Reservation__c
       WHERE ReservationStatus__c = 'Awaiting Rent'
     ];
@@ -40,7 +42,8 @@ public with sharing class ReservationDAO {
         Inventory__c,
         InventoryItem__c,
         ReservationStatus__c,
-        CreatedDate
+        CreatedDate,
+        LastModifiedDate
       FROM Reservation__c
       WHERE Contact__c = :contactId
       AND InventoryItem__c = :itemId
@@ -57,7 +60,8 @@ public with sharing class ReservationDAO {
         Inventory__c,
         InventoryItem__c,
         ReservationStatus__c,
-        CreatedDate
+        CreatedDate,
+        LastModifiedDate
       FROM Reservation__c
       WHERE Contact__c = :contactId
       AND Inventory__c = :inventoryId
